@@ -1,0 +1,21 @@
+.toggleBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    .logo{
+        font-size: 32px;
+        cursor: pointer;
+        span{
+            font-size: 34px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    }
+
+    .toggleMode{
+        cursor: pointer;
+    }
+}

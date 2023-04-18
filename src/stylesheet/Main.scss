@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700;900&display=swap');
+@import './Content.scss';
+@import './Restaurant.scss';
+@import './ToggleBar.scss';
+@import './SingleRestaurant.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.toggle{
+    transform: scale(1);
+    animation: heartBeat infinite 1.1s ease-in-out alternate;
+}
+
+.links{
+    margin-top: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: max-content;
+    gap: 5px;
+    .link{
+        animation: infinite 1.1s swing ease-in-out alternate;
+        transform: translateX(10%);
+    }
+}
+
+
+@keyframes heartBeat {
+    to{
+        transform: scale(1.2);
+    }
+}
+
+@keyframes swing {
+    to{
+        transform: translateX(-20%);
+    }
+}
+
+
+.linkCss{
+    text-decoration: none;
+}
+
+
+
+body{
+    scroll-behavior: smooth;
+}
