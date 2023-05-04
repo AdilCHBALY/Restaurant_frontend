@@ -11,6 +11,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import CircleIcon from '@mui/icons-material/Circle';
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
+import axios from 'axios'
 
 
 
@@ -31,6 +32,14 @@ function Single_Restaurant() {
         status : '',
         details : []
     })
+
+
+    const LoadDataAPI = async (resto_id)=>{
+        setLoading(true)
+        const data = await axios.get("http://localhost:8000/restaurant/"+resto_id)
+        setSingle(data)
+        setLoading(false)
+    }
     
 
     const settings = {
@@ -43,11 +52,10 @@ function Single_Restaurant() {
         slidesToScroll: 1,
         initialSlide: 0
       };
-      console.log(single)
 
     const LoadData=(resto_id)=>{
         setLoading(true)
-       const restaurants=[]
+        const restaurants=[]
 
         restaurant_data.forEach((resto)=>{
             resto.restaurants.forEach(single_resto =>{

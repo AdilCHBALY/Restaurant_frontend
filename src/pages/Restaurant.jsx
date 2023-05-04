@@ -11,6 +11,7 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import CircleIcon from '@mui/icons-material/Circle';
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import SearchIcon from '@mui/icons-material/Search';
+import axios from 'axios'
 
 
 function Restaurant() {
@@ -49,6 +50,11 @@ function Restaurant() {
     }
     const handleNavigate=()=>{
         window.history.go(-1)
+    }
+
+    const LoadDataAPI = async (city_id)=>{
+        const data = await axios.get("http://localhost:8000/city/"+city_id)
+        setRestaurant(data)
     }
 
     const StyledRating = styled(Rating)({

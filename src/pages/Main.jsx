@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTheme } from '@mui/material'
 import {  tokens } from '../theme'
 import {restaurant_data} from '../data/restaurants'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 
 function Main() {
     const navigate = useNavigate()
+    const [data,setData]=useState([])
 
     const handleClick=(city_id)=>{
         navigate("../city/"+city_id)
+    }
+
+    const LoadData=async ()=>{
+        const data = await axios.get("http://localhost:8000/city/")
+        setData(data)
     }
 
     const theme = useTheme()
