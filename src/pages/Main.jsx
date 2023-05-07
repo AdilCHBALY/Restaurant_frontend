@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
+
 function Main() {
     const navigate = useNavigate()
     const [data,setData]=useState([])

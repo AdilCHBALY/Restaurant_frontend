@@ -15,7 +15,16 @@
         }
     }
 
-    .toggleMode{
-        cursor: pointer;
+    .funcs{
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .NearBy{
+            cursor: pointer;
+        }
+        .toggleMode{
+            cursor: pointer;
+        }
     }
 }

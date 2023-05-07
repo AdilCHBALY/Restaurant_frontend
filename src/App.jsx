@@ -6,6 +6,7 @@ import Main from "./pages/Main";
 import Restaurant from "./pages/Restaurant";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Single_Restaurant from "./pages/Single_Restaurant";
+import Nearme from "./pages/Nearme";
 
 function App() {
   const [theme,colorMode]=useMode()
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/" element={<Main />}/>
                 <Route path="city/:city_id" element={<Restaurant />} />
                 <Route path="restaurant/:resto_id" element={<Single_Restaurant />}/>
+                <Route path="Nearme" element={<Nearme />}/>
               </Routes>
             </BrowserRouter>
           </div>
